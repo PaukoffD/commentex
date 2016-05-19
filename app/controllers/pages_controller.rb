@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page           = Page.find(params[:id])
-    @new_comment    = Comment.build_from(@page, "user", "")
+    @new_comment    = Comment.build_from(@page, current_user, "")
   end
 
   # GET /pages/new

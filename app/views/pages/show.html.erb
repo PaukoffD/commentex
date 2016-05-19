@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @page.name %>
 </p>
-<%= render partial: "comments/template", locals: {commentable: @page, new_comment: @comment} %>  
+<%= render partial: "comments/template", locals: {commentable: @page, new_comment: @new_comment} %>  
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>

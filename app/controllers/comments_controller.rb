@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+  #Comment::User="user"
+   @user_who_commented = current_user
     commentable = commentable_type.constantize.find(commentable_id)
-	@user_who_commented = "user"
     @comment = Comment.build_from(commentable, @user_who_commented.id, body)
 
     respond_to do |format|
